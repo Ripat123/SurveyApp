@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Rifat Rabbi/Documents/SurveyApp/app/src/main/res/drawable/ic_round_arrow_right_alt_24.xml" value="0.115" />
+        <entry key="..\:/Users/Rifat Rabbi/Documents/SurveyApp/app/src/main/res/drawable/ic_round_close_24.xml" value="0.115" />
         <entry key="..\:/Users/Rifat Rabbi/Documents/SurveyApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Rifat Rabbi/Documents/SurveyApp/app/src/main/res/layout/activity_survey.xml" value="0.1" />
+        <entry key="..\:/Users/Rifat Rabbi/Documents/SurveyApp/app/src/main/res/layout/activity_survey.xml" value="0.22" />
       </map>
     </option>
   </component>
