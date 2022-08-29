@@ -4,4 +4,9 @@
     <string name="survey_details">By answering this survey, you help us improve our service even better for you.</string>
     <string name="get_started">Get Started</string>
     <string name="saved_survey">Saved Survey</string>
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="answer">Answer</string>
+    <string name="select_ans">Select Answer</string>
+    <string name="open_camera">Open Camera</string>
 </resources>

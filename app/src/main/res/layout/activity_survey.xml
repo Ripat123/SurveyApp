@@ -11,7 +11,7 @@
         android:id="@+id/close_card"
         style="@style/Widget.Material3.CardView.Filled"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginStart="-30dp"
         android:layout_marginTop="14dp"
         android:clickable="true"
@@ -30,6 +30,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="4dp"
                 android:src="@drawable/ic_round_close_24"
@@ -41,19 +42,20 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
+        style="@style/Widget.Material3.LinearProgressIndicator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/progress_indicator"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:trackCornerRadius="30dp"
-        app:trackThickness="15dp"
-        app:indicatorColor="@color/deep_main"
         android:progress="50"
-        style="@style/Widget.Material3.LinearProgressIndicator"
+        app:indicatorColor="@color/deep_main"
         app:layout_constraintBottom_toBottomOf="@+id/close_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/close_card"
-        app:layout_constraintTop_toTopOf="@+id/close_card" />
+        app:layout_constraintTop_toTopOf="@+id/close_card"
+        app:trackCornerRadius="30dp"
+        app:trackThickness="15dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/first_card"
@@ -71,21 +73,324 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/q1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="How are you?"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/prevbtn"
+                app:layout_constraintTop_toBottomOf="@+id/q1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/parent_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/first_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <RadioGroup
+                            android:id="@+id/multipleRadio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RadioButton
+                                android:id="@+id/c1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Very Good" />
+
+                            <RadioButton
+                                android:id="@+id/c2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Very Good" />
+
+                            <RadioButton
+                                android:id="@+id/c3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Very Good" />
+
+                            <RadioButton
+                                android:id="@+id/c4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Very Good" />
+
+                            <RadioButton
+                                android:id="@+id/c5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Very Good" />
+                        </RadioGroup>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/second_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/answer_lay"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="20dp"
+                            android:hint="@string/answer"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="clear_text"
+                            android:background="@drawable/edittext"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/answer"
+                                style="@style/ThemeOverlay.Material3.TextInputEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="text"
+                                android:selectAllOnFocus="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/third_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ansType_lay"
+                            style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/edittext"
+                            android:hint="@string/select_ans"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="dropdown_menu"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/ansType"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fourth_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkbox1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/app_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkbox2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/app_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/checkbox1" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkbox3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/app_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/checkbox2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fifth_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/num_in_lay"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="20dp"
+                            android:hint="@string/answer"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxStrokeWidth="0dp"
+                            app:endIconMode="clear_text"
+                            android:background="@drawable/edittext"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/num_in"
+                                style="@style/ThemeOverlay.Material3.TextInputEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="number"
+                                android:selectAllOnFocus="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sixth_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/materialCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="180dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/open_cam"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/img"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/open_cam"
+                            style="@style/Widget.Material3.Button.UnelevatedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/soft_main"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/open_camera"
+                            android:textColor="@color/main"
+                            android:textStyle="bold"
+                            app:rippleColor="@color/main"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+                            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+                            app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextbtn"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/prevbtn"
+                app:rippleColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/prevbtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/prev"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/nextbtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:rippleColor="@color/main" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/guideline1"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
-    <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"/>
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

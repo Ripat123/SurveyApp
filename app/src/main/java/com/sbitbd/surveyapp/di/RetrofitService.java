@@ -1,9 +1,7 @@
 package com.sbitbd.surveyapp.di;
 
 
-import com.google.gson.JsonArray;
 import com.sbitbd.surveyapp.Model.SurveyData;
-import com.sbitbd.surveyapp.Model.SurveyList;
 
 import java.util.ArrayList;
 

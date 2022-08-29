@@ -39,6 +39,18 @@ public class surveyViewModel extends ViewModel {
         return listMutableLiveData;
     }
 
+    protected int getIndex(String id){
+        try {
+            for (SurveyData x : listMutableLiveData.getValue().getSurveyData()) {
+                if (x.getId().equals(id) ) {
+                    return listMutableLiveData.getValue().getSurveyData().indexOf(x);
+                }
+            }
+        } catch (Exception e) {
+        }
+        return -1;
+    }
+
     protected void surveyData(){
         Call<ArrayList<SurveyData>> call = retrofitService.getApiData(RetrofitModule.getTimestamp());
         call.enqueue(new Callback<ArrayList<SurveyData>>() {
